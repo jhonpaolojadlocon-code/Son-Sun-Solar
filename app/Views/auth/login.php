@@ -3,18 +3,6 @@
 <section class="auth-page">
     <div class="auth-shell">
         <div class="auth-hero">
-<<<<<<< HEAD
-            <p class="eyebrow">Secure Access</p>
-            <h1>Return to the mission.</h1>
-            <p>
-                Sign in to continue your Operation Apostle profile and keep your progress attached to your username.
-            </p>
-
-            <div class="auth-highlights">
-                <div class="auth-chip">Persistent username</div>
-                <div class="auth-chip">Fast sign-in flow</div>
-                <div class="auth-chip">Shared site styling</div>
-=======
             <p class="eyebrow">Customer portal</p>
             <h1>Your energy, all in one place.</h1>
             <p>
@@ -25,18 +13,13 @@
                 <div class="auth-chip">Account access</div>
                 <div class="auth-chip">Project updates</div>
                 <div class="auth-chip">Solar support</div>
->>>>>>> e4eea015a47fb28b5fdecd33cbb63d32711396f5
             </div>
         </div>
 
         <div class="auth-box auth-card">
             <p class="eyebrow">Login</p>
             <h2>Welcome Back</h2>
-<<<<<<< HEAD
-            <p class="auth-intro">Use your username and password to continue where you left off.</p>
-=======
             <p class="auth-intro">Use your username or email and password to sign in.</p>
->>>>>>> e4eea015a47fb28b5fdecd33cbb63d32711396f5
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="auth-message error"><?= esc(session()->getFlashdata('error')) ?></div>

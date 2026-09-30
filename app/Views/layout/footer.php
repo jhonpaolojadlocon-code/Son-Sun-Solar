@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<footer>
-    &copy; 2026 Operation Apostle
-</footer>
-
-=======
 <footer class="site-footer">
     <div class="footer-cta" aria-hidden="true"></div>
     <div class="footer-main section-wrap">
@@ -25,6 +19,5 @@
         <span class="footer-sun" aria-hidden="true">Powered by a brighter future ☀</span>
     </div>
 </footer>
->>>>>>> e4eea015a47fb28b5fdecd33cbb63d32711396f5
 </body>
 </html>

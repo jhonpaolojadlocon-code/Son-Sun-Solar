@@ -28,7 +28,7 @@ class Auth extends BaseController
 
         $user = $model
             ->groupStart()
-            ->where('username', $username)
+            ->where('Username', $username)
             ->orWhere('email', $username)
             ->groupEnd()
             ->first();
@@ -37,10 +37,9 @@ class Auth extends BaseController
             $storedPassword = (string) ($user['password'] ?? '');
             $isValid = $storedPassword !== '' && password_verify($password, $storedPassword);
 
-            // Backwards-compat for plaintext passwords: allow match, then upgrade to hash.
+            // Support existing plaintext entries without rewriting stored credentials.
             if (! $isValid && $storedPassword !== '' && hash_equals($storedPassword, $password)) {
                 $isValid = true;
-                $model->update((int) $user['id'], ['password' => password_hash($password, PASSWORD_DEFAULT)]);
             }
         }
 
@@ -48,10 +47,10 @@ class Auth extends BaseController
 
             session()->set([
                 'user_id' => $user['id'],
-                'username' => $user['username']
+                'username' => $user['Username']
             ]);
 
-            return redirect()->to('/')->with('success', 'Welcome back, ' . $user['username'] . '.');
+            return redirect()->to('/')->with('success', 'Welcome back, ' . $user['Username'] . '.');
         }
 
         return redirect()->back()->withInput()->with('error', 'Invalid login details.');
@@ -87,7 +86,7 @@ class Auth extends BaseController
 
         $existingUser = $model
             ->groupStart()
-            ->where('username', $username)
+            ->where('Username', $username)
             ->orWhere('email', $email)
             ->groupEnd()
             ->first();
@@ -97,18 +96,18 @@ class Auth extends BaseController
         }
 
         $model->save([
-            'username' => $username,
+            'Username' => $username,
             'email' => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT),
-            'created_at' => date('Y-m-d H:i:s'),
+            'password' => $password,
+            'confirmpassword' => $confirmPassword,
         ]);
 
-        $newUser = $model->where('username', $username)->first();
+        $newUser = $model->where('Username', $username)->first();
 
         if ($newUser) {
             session()->set([
                 'user_id' => $newUser['id'],
-                'username' => $newUser['username']
+                'username' => $newUser['Username']
             ]);
 
             return redirect()->to('/');
