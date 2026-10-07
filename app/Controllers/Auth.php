@@ -19,19 +19,14 @@ class Auth extends BaseController
     public function loginProcess()
     {
         $model = new UserModel();
-        $username = trim((string) $this->request->getPost('username'));
+        $email = trim((string) $this->request->getPost('email'));
         $password = (string) $this->request->getPost('password');
 
-        if ($username === '' || $password === '') {
-            return redirect()->back()->withInput()->with('error', 'Enter both username and password.');
+        if ($email === '' || $password === '') {
+            return redirect()->back()->withInput()->with('error', 'Enter both email and password.');
         }
 
-        $user = $model
-            ->groupStart()
-            ->where('Username', $username)
-            ->orWhere('email', $username)
-            ->groupEnd()
-            ->first();
+        $user = $model->where('email', $email)->first();
 
         if ($user) {
             $storedPassword = (string) ($user['password'] ?? '');
@@ -47,10 +42,10 @@ class Auth extends BaseController
 
             session()->set([
                 'user_id' => $user['id'],
-                'username' => $user['Username']
+                'display_name' => $user['first_name'] ?? $user['email']
             ]);
 
-            return redirect()->to('/')->with('success', 'Welcome back, ' . $user['Username'] . '.');
+            return redirect()->to('/')->with('success', 'Welcome back, ' . ($user['first_name'] ?? $user['email']) . '.');
         }
 
         return redirect()->back()->withInput()->with('error', 'Invalid login details.');
@@ -59,17 +54,34 @@ class Auth extends BaseController
     public function registerProcess()
     {
         $model = new UserModel();
-        $username = trim((string) $this->request->getPost('username'));
         $email = trim((string) $this->request->getPost('email'));
+        $firstName = trim((string) $this->request->getPost('first_name'));
+        $lastName = trim((string) $this->request->getPost('last_name'));
+        $middleName = trim((string) $this->request->getPost('middle_name'));
+        $birthday = trim((string) $this->request->getPost('birthday'));
+        $gender = trim((string) $this->request->getPost('gender'));
+        $phoneNumber = trim((string) $this->request->getPost('phone_number'));
+        $address = trim((string) $this->request->getPost('address'));
+        $department = trim((string) $this->request->getPost('department'));
         $password = (string) $this->request->getPost('password');
         $confirmPassword = (string) $this->request->getPost('confirm_password');
 
-        if ($username === '' || $email === '' || $password === '' || $confirmPassword === '') {
+        if ($email === '' || $firstName === '' || $lastName === '' || $middleName === '' || $birthday === '' || $gender === '' || $phoneNumber === '' || $address === '' || $password === '' || $confirmPassword === '') {
             return redirect()->back()->withInput()->with('error', 'Complete all fields before signing up.');
         }
 
-        if (mb_strlen($username) < 3) {
-            return redirect()->back()->withInput()->with('error', 'Username must be at least 3 characters.');
+        $departments = ['Administration', 'IT Dispatch', 'Accounting', 'HR', 'Marketing', 'Sales', 'Customer service'];
+        if ($department !== '' && ! in_array($department, $departments, true)) {
+            return redirect()->back()->withInput()->with('error', 'Choose a valid department.');
+        }
+
+        if (! in_array($gender, ['Female', 'Male', 'Non-binary', 'Prefer not to say'], true)) {
+            return redirect()->back()->withInput()->with('error', 'Choose a valid gender option.');
+        }
+
+        $birthdayDate = \DateTimeImmutable::createFromFormat('Y-m-d', $birthday);
+        if (! $birthdayDate || $birthdayDate->format('Y-m-d') !== $birthday || $birthdayDate > new \DateTimeImmutable('today')) {
+            return redirect()->back()->withInput()->with('error', 'Enter a valid birthday.');
         }
 
         if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -85,29 +97,32 @@ class Auth extends BaseController
         }
 
         $existingUser = $model
-            ->groupStart()
-            ->where('Username', $username)
-            ->orWhere('email', $email)
-            ->groupEnd()
+            ->where('email', $email)
             ->first();
 
         if ($existingUser) {
-            return redirect()->back()->withInput()->with('error', 'That username or email is already taken.');
+            return redirect()->back()->withInput()->with('error', 'That email address is already registered.');
         }
 
         $model->save([
-            'Username' => $username,
             'email' => $email,
             'password' => $password,
-            'confirmpassword' => $confirmPassword,
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'middle_name' => $middleName,
+            'birthday' => $birthday,
+            'gender' => $gender,
+            'phone_number' => $phoneNumber,
+            'address' => $address,
+            'department' => $department !== '' ? $department : null,
         ]);
 
-        $newUser = $model->where('Username', $username)->first();
+        $newUser = $model->where('email', $email)->first();
 
         if ($newUser) {
             session()->set([
                 'user_id' => $newUser['id'],
-                'username' => $newUser['Username']
+                'display_name' => $newUser['first_name']
             ]);
 
             return redirect()->to('/');

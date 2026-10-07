@@ -10,9 +10,15 @@ class UserModel extends Model
     protected $returnType = 'array';
     protected $useAutoIncrement = true;
     protected $allowedFields = [
-        'Username',
         'email',
         'password',
-        'confirmpassword',
+        'first_name',
+        'last_name',
+        'middle_name',
+        'birthday',
+        'gender',
+        'phone_number',
+        'address',
+        'department',
     ];
 }

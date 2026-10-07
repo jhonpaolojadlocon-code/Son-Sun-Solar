@@ -28,8 +28,8 @@
         </nav>
 
         <div class="header-actions">
-            <?php if (session()->get('username')): ?>
-                <span class="user-badge">Hi, <?= esc((string) session()->get('username')) ?></span>
+            <?php if (session()->get('display_name')): ?>
+                <span class="user-badge">Hi, <?= esc((string) session()->get('display_name')) ?></span>
                 <a class="nav-login" href="<?= base_url('logout') ?>">Log out</a>
             <?php else: ?>
                 <a class="nav-login" href="<?= base_url('login') ?>">Log in</a>

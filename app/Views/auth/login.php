@@ -19,7 +19,7 @@
         <div class="auth-box auth-card">
             <p class="eyebrow">Login</p>
             <h2>Welcome Back</h2>
-            <p class="auth-intro">Use your username or email and password to sign in.</p>
+            <p class="auth-intro">Use your email and password to sign in.</p>
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="auth-message error"><?= esc(session()->getFlashdata('error')) ?></div>
@@ -30,8 +30,8 @@
             <?php endif; ?>
 
             <form method="post" action="<?= base_url('login') ?>">
-                <label class="auth-label" for="login-username">Username or Email</label>
-                <input id="login-username" type="text" name="username" placeholder="Enter your username or email" value="<?= esc(old('username')) ?>" required>
+                <label class="auth-label" for="login-email">Email</label>
+                <input id="login-email" type="email" name="email" placeholder="Enter your email" value="<?= esc(old('email')) ?>" autocomplete="email" required>
 
                 <label class="auth-label" for="login-password">Password</label>
                 <input id="login-password" type="password" name="password" placeholder="Enter your password" required>
