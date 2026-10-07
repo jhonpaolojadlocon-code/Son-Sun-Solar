@@ -29,7 +29,8 @@ Marketing
 Sales
 Customer service
 # and this has the Codeigniter Full file for it aswell
+<img width="1462" height="214" alt="image" src="https://github.com/user-attachments/assets/c1b6392e-da27-4d74-aafb-af809a04a568" />
 <img width="1096" height="919" alt="Screenshot 2026-10-08 004914" src="https://github.com/user-attachments/assets/aefb37e4-17cd-48b6-959c-47a54f91eb56" />
 <img width="1039" height="911" alt="Screenshot 2026-10-08 004851" src="https://github.com/user-attachments/assets/78ce4758-9917-4856-a9ff-590c87cc23bd" />
-<img width="1462" height="214" alt="image" src="https://github.com/user-attachments/assets/c1b6392e-da27-4d74-aafb-af809a04a568" />
+
 
