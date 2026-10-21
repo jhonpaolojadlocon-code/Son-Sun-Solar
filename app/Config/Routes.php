@@ -6,6 +6,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Pages::home');
+$routes->get('admin', 'Pages::admin');
+$routes->get('field', 'Pages::field');
 $routes->get('details', 'Pages::details');
 $routes->get('agent', 'Pages::agent');
 $routes->get('about', 'Pages::about');

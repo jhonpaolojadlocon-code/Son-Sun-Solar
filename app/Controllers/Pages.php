@@ -11,6 +11,16 @@ class Pages extends BaseController
         return view('home');
     }
 
+    public function admin()
+    {
+        return view('admin');
+    }
+
+    public function field()
+    {
+        return view('field');
+    }
+
     public function details()
     {
         return view('details');
