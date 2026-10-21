@@ -1,0 +1,522 @@
+DEBUG - 2026-10-07 16:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:03:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-10-07 16:18:36 --> Unknown column 'Username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:18:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Username' in 'field list'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:18:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:18:36 --> [Caused by] mysqli_sql_exception: Unknown column 'Username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_449e8a92cc04c407\', \'katherine.sinagaraw@sunsonsolar.com\', \'123456\', \'123456\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-10-07 16:19:10 --> Unknown column 'Username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:19:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Username' in 'field list'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:19:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:19:10 --> [Caused by] mysqli_sql_exception: Unknown column 'Username' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'employee_f4fc872db2830a88\', \'katherine.sinagaraw@sunsonsolar.com\', \'JOJOJO\', \'JOJOJO\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'Solar road #22\', \'IT Dispatch\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`Username`, `email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:Username:, :email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(110): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-10-07 16:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-10-07 16:23:10 --> Unknown column 'confirmpassword' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:23:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'confirmpassword' in 'field list'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:23:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'confirmpassword' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:23:10 --> [Caused by] mysqli_sql_exception: Unknown column 'confirmpassword' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'solar street #11\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-10-07 16:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-10-07 16:25:46 --> Unknown column 'confirmpassword' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:25:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'confirmpassword' in 'field list'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:25:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'confirmpassword' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:25:46 --> [Caused by] mysqli_sql_exception: Unknown column 'confirmpassword' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 solar street\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `confirmpassword`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :confirmpassword:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-10-07 16:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-10-07 16:27:27 --> Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:27:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'first_name' in 'field list'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:27:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:27:27 --> [Caused by] mysqli_sql_exception: Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-04-01\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-10-07 16:28:53 --> Duplicate column name 'birthday'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('ALTER TABLE `registration`
+	ADD `first_name` VARCHAR(100) NULL,
+	ADD `last_name` VARCHAR(100) NULL,
+	ADD `middle_name` VARCHAR(100) NULL,
+	ADD `birthday` DATE NULL,
+	ADD `gender` VARCHAR(30) NULL,
+	ADD `phone_number` VARCHAR(30) NULL,
+	ADD `address` TEXT NULL,
+	ADD `department` VARCHAR(60) NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `registration`
+	ADD `first_name` VARCHAR(100) NULL,
+	ADD `last_name` VARCHAR(100) NULL,
+	ADD `middle_name` VARCHAR(100) NULL,
+	ADD `birthday` DATE NULL,
+	ADD `gender` VARCHAR(30) NULL,
+	ADD `phone_number` VARCHAR(30) NULL,
+	ADD `address` TEXT NULL,
+	ADD `department` VARCHAR(60) NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `registration`
+	ADD `first_name` VARCHAR(100) NULL,
+	ADD `last_name` VARCHAR(100) NULL,
+	ADD `middle_name` VARCHAR(100) NULL,
+	ADD `birthday` DATE NULL,
+	ADD `gender` VARCHAR(30) NULL,
+	ADD `phone_number` VARCHAR(30) NULL,
+	ADD `address` TEXT NULL,
+	ADD `department` VARCHAR(60) NULL')
+ 4 SYSTEMPATH\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `registration`
+	ADD `first_name` VARCHAR(100) NULL,
+	ADD `last_name` VARCHAR(100) NULL,
+	ADD `middle_name` VARCHAR(100) NULL,
+	ADD `birthday` DATE NULL,
+	ADD `gender` VARCHAR(30) NULL,
+	ADD `phone_number` VARCHAR(30) NULL,
+	ADD `address` TEXT NULL,
+	ADD `department` VARCHAR(60) NULL')
+ 5 APPPATH\Database\Migrations\2026-10-07-000001_AddEmployeeDetailsToRegistration.php(11): CodeIgniter\Database\Forge->addColumn('registration', [...])
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\AddEmployeeDetailsToRegistration->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-10-07 16:29:15 --> Duplicate column name 'birthday'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('ALTER TABLE `registration`
+	ADD `birthday` DATE NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `registration`
+	ADD `birthday` DATE NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `registration`
+	ADD `birthday` DATE NULL')
+ 4 SYSTEMPATH\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `registration`
+	ADD `birthday` DATE NULL')
+ 5 APPPATH\Database\Migrations\2026-10-07-000001_AddEmployeeDetailsToRegistration.php(54): CodeIgniter\Database\Forge->addColumn('registration', [...])
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\AddEmployeeDetailsToRegistration->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-10-07 16:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-10-07 16:34:08 --> Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:34:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'first_name' in 'field list'
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 2 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:34:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 4 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-10-07 16:34:08 --> [Caused by] mysqli_sql_exception: Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (\'katherine.sinagaraw@sunsonsolar.com\', \'jojojo\', \'Katherine\', \'Olap\', \'Sinagaraw\', \'1990-01-04\', \'Female\', \'09291230983\', \'#11 Solar Street\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `registration` (`email`, `password`, `first_name`, `last_name`, `middle_name`, `birthday`, `gender`, `phone_number`, `address`, `department`) VALUES (:email:, :password:, :first_name:, :last_name:, :middle_name:, :birthday:, :gender:, :phone_number:, :address:, :department:)', [...], false)
+ 5 SYSTEMPATH\Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(668): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH\BaseModel.php(752): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH\Controllers\Auth.php(107): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Auth->registerProcess()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+12 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-10-07 16:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:41:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:44:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-10-07 16:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
