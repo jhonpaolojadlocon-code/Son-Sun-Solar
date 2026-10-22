@@ -13,7 +13,7 @@
 
             <div class="hero-actions">
                 <a class="button button-primary" href="<?= base_url('register') ?>">Create customer account <span aria-hidden="true">→</span></a>
-                <a class="button button-secondary" href="<?= base_url('login') ?>">Staff / admin portal</a>
+                <a class="button button-secondary" href="<?= base_url('admin/login') ?>">Admin portal</a>
             </div>
             <div class="hero-proof"><span class="proof-stars" aria-hidden="true">★★★★★</span> Trusted solar support from plan to installation</div>
         </div>

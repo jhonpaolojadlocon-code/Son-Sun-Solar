@@ -16,3 +16,7 @@ $routes->post('login', 'Auth::loginProcess');
 $routes->get('register', 'Auth::register');
 $routes->post('register', 'Auth::registerProcess');
 $routes->get('logout', 'Auth::logout');
+$routes->get('admin/login', 'Auth::adminLogin');
+$routes->post('admin/login', 'Auth::adminLoginProcess');
+$routes->get('admin/departments', 'Auth::adminDepartments');
+$routes->get('admin/logout', 'Auth::adminLogout');

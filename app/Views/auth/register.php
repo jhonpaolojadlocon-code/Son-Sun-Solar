@@ -55,14 +55,6 @@
                 <label class="auth-label" for="register-address">Address</label>
                 <textarea id="register-address" name="address" placeholder="Street, city, and other address details" autocomplete="street-address" required><?= esc(old('address')) ?></textarea>
 
-                <label class="auth-label" for="register-department">Department</label>
-                <select id="register-department" name="department">
-                    <option value="">Select a department (optional)</option>
-                    <?php foreach (['Administration', 'IT Dispatch', 'Accounting', 'HR', 'Marketing', 'Sales', 'Customer service'] as $department): ?>
-                        <option value="<?= esc($department) ?>" <?= old('department') === $department ? 'selected' : '' ?>><?= esc($department) ?></option>
-                    <?php endforeach; ?>
-                </select>
-
                 <label class="auth-label" for="register-password">Password</label>
                 <input id="register-password" type="password" name="password" placeholder="At least 6 characters" autocomplete="new-password" required>
 

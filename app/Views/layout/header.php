@@ -28,7 +28,10 @@
         </nav>
 
         <div class="header-actions">
-            <?php if (session()->get('display_name')): ?>
+            <?php if (session()->get('is_admin')): ?>
+                <a class="admin-nav-switch" href="<?= base_url('admin/departments') ?>"><span class="switch-indicator" aria-hidden="true"></span>Departments</a>
+                <a class="nav-login" href="<?= base_url('admin/logout') ?>">Admin sign out</a>
+            <?php elseif (session()->get('display_name')): ?>
                 <span class="user-badge">Hi, <?= esc((string) session()->get('display_name')) ?></span>
                 <a class="nav-login" href="<?= base_url('logout') ?>">Log out</a>
             <?php else: ?>
