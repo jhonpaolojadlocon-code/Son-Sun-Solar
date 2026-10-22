@@ -36,6 +36,7 @@
                 <a class="nav-login" href="<?= base_url('logout') ?>">Log out</a>
             <?php else: ?>
                 <a class="nav-login" href="<?= base_url('login') ?>">Log in</a>
+                <a class="admin-nav-switch" href="<?= base_url('admin/login') ?>">Admin portal</a>
                 <a class="button button-primary header-cta" href="<?= base_url('register') ?>">Get started</a>
             <?php endif; ?>
         </div>
