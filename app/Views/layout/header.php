@@ -29,14 +29,14 @@
 
         <div class="header-actions">
             <?php if (session()->get('is_admin')): ?>
-                <a class="admin-nav-switch" href="<?= base_url('admin/departments') ?>"><span class="switch-indicator" aria-hidden="true"></span>Departments</a>
-                <a class="nav-login" href="<?= base_url('admin/logout') ?>">Admin sign out</a>
+                <a class="admin-nav-switch" href="<?= base_url('admin/dashboard') ?>"><span class="switch-indicator" aria-hidden="true"></span>Employee dashboard</a>
+                <a class="nav-login" href="<?= base_url('admin/logout') ?>">Staff sign out</a>
             <?php elseif (session()->get('display_name')): ?>
                 <span class="user-badge">Hi, <?= esc((string) session()->get('display_name')) ?></span>
                 <a class="nav-login" href="<?= base_url('logout') ?>">Log out</a>
             <?php else: ?>
                 <a class="nav-login" href="<?= base_url('login') ?>">Log in</a>
-                <a class="admin-nav-switch" href="<?= base_url('admin/login') ?>">Admin portal</a>
+                <a class="admin-nav-switch" href="<?= base_url('admin/login') ?>">Staff portal</a>
                 <a class="button button-primary header-cta" href="<?= base_url('register') ?>">Get started</a>
             <?php endif; ?>
         </div>

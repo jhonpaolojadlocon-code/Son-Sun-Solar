@@ -6,6 +6,8 @@ use App\Models\UserModel;
 
 class Auth extends BaseController
 {
+    private const DEPARTMENTS = ['Administration', 'IT', 'Dispatch', 'Accounting', 'HR', 'Marketing', 'Sales', 'Customer Service'];
+
     public function login()
     {
         return view('auth/login');
@@ -14,6 +16,125 @@ class Auth extends BaseController
     public function register()
     {
         return view('auth/register');
+    }
+
+    public function adminLogin()
+    {
+        if (session()->get('is_admin')) {
+            return redirect()->to(base_url('admin/dashboard'));
+        }
+
+        return view('auth/admin_login', ['departments' => self::DEPARTMENTS]);
+    }
+
+    public function adminLoginProcess()
+    {
+        $username = trim((string) $this->request->getPost('username'));
+        $password = (string) $this->request->getPost('password');
+        $department = trim((string) $this->request->getPost('department'));
+        if ($username !== '' && $password !== '' && in_array($department, self::DEPARTMENTS, true)) {
+            $staff = db_connect()->table('admin')
+                ->where('Username', $username)
+                ->where('Department', $department)
+                ->get()->getRowArray();
+            $storedPassword = (string) ($staff['Password'] ?? '');
+            $validPassword = $storedPassword !== '' && password_verify($password, $storedPassword);
+
+            // Keep existing plaintext staff passwords working while allowing hashed passwords.
+            if (! $validPassword && $storedPassword !== '' && hash_equals($storedPassword, $password)) {
+                $validPassword = true;
+            }
+
+            if ($staff && $validPassword) {
+                session()->regenerate(true);
+                session()->set([
+                    'is_admin' => true,
+                    'admin_email' => (string) $staff['Username'],
+                    'admin_department' => (string) $staff['Department'],
+                ]);
+                return redirect()->to(base_url('admin/dashboard'));
+            }
+        }
+
+        return redirect()->back()->withInput()->with('error', 'Invalid staff username or password.');
+    }
+
+    public function employeeDashboard()
+    {
+        if (! session()->get('is_admin')) {
+            return redirect()->to(base_url('admin/login'))->with('error', 'Sign in to access the employee dashboard.');
+        }
+
+        $db = db_connect();
+        $email = (string) session()->get('admin_email');
+        $today = date('Y-m-d');
+        $todayRecord = $db->table('employee_attendance')->where('employee_email', $email)->where('work_date', $today)->get()->getRowArray();
+        $history = $db->table('employee_attendance')->where('employee_email', $email)->orderBy('work_date', 'DESC')->limit(7)->get()->getResultArray();
+
+        return view('employee/dashboard', [
+            'todayRecord' => $todayRecord,
+            'history' => $history,
+            'employeeEmail' => $email,
+            'department' => (string) session()->get('admin_department'),
+        ]);
+    }
+
+    public function timeIn()
+    {
+        if (! session()->get('is_admin')) {
+            return redirect()->to(base_url('admin/login'))->with('error', 'Sign in to record attendance.');
+        }
+
+        $db = db_connect();
+        $email = (string) session()->get('admin_email');
+        $today = date('Y-m-d');
+        $existing = $db->table('employee_attendance')->where('employee_email', $email)->where('work_date', $today)->get()->getRowArray();
+        if ($existing) {
+            return redirect()->to(base_url('admin/dashboard'))->with('error', 'You have already timed in today.');
+        }
+
+        $db->table('employee_attendance')->insert([
+            'employee_email' => $email,
+            'work_date' => $today,
+            'time_in' => date('Y-m-d H:i:s'),
+        ]);
+
+        return redirect()->to(base_url('admin/dashboard'))->with('success', 'Time in recorded.');
+    }
+
+    public function timeOut()
+    {
+        if (! session()->get('is_admin')) {
+            return redirect()->to(base_url('admin/login'))->with('error', 'Sign in to record attendance.');
+        }
+
+        $db = db_connect();
+        $record = $db->table('employee_attendance')
+            ->where('employee_email', (string) session()->get('admin_email'))
+            ->where('work_date', date('Y-m-d'))
+            ->where('time_out', null)
+            ->get()->getRowArray();
+        if (! $record) {
+            return redirect()->to(base_url('admin/dashboard'))->with('error', 'You need to time in before you can time out.');
+        }
+
+        $db->table('employee_attendance')->where('id', $record['id'])->update(['time_out' => date('Y-m-d H:i:s')]);
+        return redirect()->to(base_url('admin/dashboard'))->with('success', 'Time out recorded.');
+    }
+
+    public function adminDepartments()
+    {
+        if (! session()->get('is_admin')) {
+            return redirect()->to(base_url('admin/login'))->with('error', 'Sign in as an administrator to view departments.');
+        }
+
+        return view('admin/departments', ['departments' => self::DEPARTMENTS]);
+    }
+
+    public function adminLogout()
+    {
+        session()->remove(['is_admin', 'admin_email', 'admin_department']);
+        return redirect()->to(base_url('admin/login'));
     }
 
     public function loginProcess()
@@ -69,11 +190,6 @@ class Auth extends BaseController
             return redirect()->back()->withInput()->with('error', 'Complete all fields before signing up.');
         }
 
-        $departments = ['Administration', 'IT Dispatch', 'Accounting', 'HR', 'Marketing', 'Sales', 'Customer service'];
-        if ($department !== '' && ! in_array($department, $departments, true)) {
-            return redirect()->back()->withInput()->with('error', 'Choose a valid department.');
-        }
-
         if (! in_array($gender, ['Female', 'Male', 'Non-binary', 'Prefer not to say'], true)) {
             return redirect()->back()->withInput()->with('error', 'Choose a valid gender option.');
         }
@@ -113,7 +229,6 @@ class Auth extends BaseController
             'gender' => $gender,
             'phone_number' => $phoneNumber,
             'address' => $address,
-            'department' => $department !== '' ? $department : null,
         ]);
 
         $newUser = $model->where('email', $email)->first();
