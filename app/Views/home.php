@@ -13,7 +13,6 @@
 
             <div class="hero-actions">
                 <a class="button button-primary" href="<?= base_url('register') ?>">Create customer account <span aria-hidden="true">→</span></a>
-                <a class="button button-secondary" href="<?= base_url('admin/login') ?>">Staff portal</a>
             </div>
             <div class="hero-proof"><span class="proof-stars" aria-hidden="true">★★★★★</span> Trusted solar support from plan to installation</div>
         </div>
@@ -78,6 +77,23 @@
                     <h3>Real-time app tracking</h3>
                     <p>See your energy production, savings, and system health wherever you are.</p>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section" id="products-services" aria-labelledby="products-title">
+        <div class="section-wrap">
+            <div class="section-heading"><p class="eyebrow">Solar solutions</p><h2 id="products-title">Products and services for your solar journey</h2><p>Explore the equipment and support Sun Son Solar can provide.</p></div>
+            <div class="benefit-grid">
+                <?php foreach ([['Solar panels', 'Capture sunlight and turn it into usable power.'], ['Inverters', 'Convert solar energy for use around your home.'], ['Batteries', 'Store energy for use when sunlight is limited.'], ['Racking and mounting', 'Secure solar equipment to suit the installation site.'], ['Wires and accessories', 'Connect system components for a complete installation.'], ['Consultation and design', 'Plan a solar setup around the property and its needs.'], ['Permitting and installation', 'Coordinate approvals and professional installation.'], ['Maintenance, repair and monitoring', 'Keep an installed system checked and supported.']] as [$item, $description]): ?>
+                    <article class="benefit-card"><h3><?= esc($item) ?></h3><p><?= esc($description) ?></p></article>
+                <?php endforeach; ?>
+            </div>
+            <div class="section-heading" style="margin-top:3rem"><p class="eyebrow">Questions</p><h2>Solar basics</h2></div>
+            <div class="benefit-grid">
+                <article class="benefit-card"><h3>How do I get started?</h3><p>Create a customer account and request a consultation. The team can discuss a design for your property.</p></article>
+                <article class="benefit-card"><h3>Can I request maintenance or repair?</h3><p>Yes. Use your customer dashboard to submit a service request and track its status.</p></article>
+                <article class="benefit-card"><h3>How will I know when a request is confirmed?</h3><p>Your dashboard shows the current status, and company updates appear in its notifications panel.</p></article>
             </div>
         </div>
     </section>

@@ -23,6 +23,7 @@
         <nav class="main-nav" aria-label="Main navigation">
             <a href="<?= base_url('/') ?>">Home</a>
             <a href="<?= base_url('/') ?>#benefits">Benefits</a>
+            <a href="<?= base_url('/') ?>#products-services">Products &amp; services</a>
             <a href="<?= base_url('/') ?>#how-it-works">How it works</a>
             <a href="<?= base_url('/') ?>#get-started">Contact</a>
         </nav>
@@ -33,6 +34,7 @@
                 <a class="nav-login" href="<?= base_url('admin/logout') ?>">Staff sign out</a>
             <?php elseif (session()->get('display_name')): ?>
                 <span class="user-badge">Hi, <?= esc((string) session()->get('display_name')) ?></span>
+                <a class="admin-nav-switch" href="<?= base_url('customer/dashboard') ?>">My dashboard</a>
                 <a class="nav-login" href="<?= base_url('logout') ?>">Log out</a>
             <?php else: ?>
                 <a class="nav-login" href="<?= base_url('login') ?>">Log in</a>

@@ -31,7 +31,7 @@ class CreateEmployeeAttendance extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addKey(['employee_email', 'work_date'], true);
+        $this->forge->addUniqueKey(['employee_email', 'work_date']);
         $this->forge->createTable('employee_attendance', true);
     }
 

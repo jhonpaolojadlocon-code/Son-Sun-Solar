@@ -19,7 +19,7 @@
         <div class="auth-box auth-card">
             <p class="eyebrow">Sign Up</p>
             <h2>Create your account</h2>
-            <p class="auth-intro">Enter your details to create your employee account.</p>
+            <p class="auth-intro">Enter your details to create your customer account.</p>
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="auth-message error"><?= esc(session()->getFlashdata('error')) ?></div>
@@ -41,7 +41,7 @@
                 <label class="auth-label" for="register-gender">Gender</label>
                 <select id="register-gender" name="gender" required>
                     <option value="">Select gender</option>
-                    <?php foreach (['Female', 'Male', 'Non-binary', 'Prefer not to say'] as $gender): ?>
+                    <?php foreach (['Male', 'Female'] as $gender): ?>
                         <option value="<?= esc($gender) ?>" <?= old('gender') === $gender ? 'selected' : '' ?>><?= esc($gender) ?></option>
                     <?php endforeach; ?>
                 </select>

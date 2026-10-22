@@ -14,30 +14,36 @@
 
         <div class="auth-box auth-card">
             <p class="eyebrow">Staff portal</p>
-            <h2>Staff sign in</h2>
-            <p class="auth-intro">Use the username and password saved in your staff account.</p>
+            <?php if ($needsInitialStaff): ?>
+                <h2>Set up the first staff account</h2>
+                <p class="auth-intro">There are no staff accounts yet. Create the first one to open the dashboard.</p>
+            <?php else: ?>
+                <h2>Staff sign in</h2>
+                <p class="auth-intro">Enter the exact Username and Password stored in the admin table. Department is optional and does not affect sign-in.</p>
+            <?php endif; ?>
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="auth-message error"><?= esc(session()->getFlashdata('error')) ?></div>
             <?php endif; ?>
 
-            <form method="post" action="<?= base_url('admin/login') ?>">
-                <label class="auth-label" for="staff-username">Username</label>
-                <input id="staff-username" type="text" name="username" placeholder="Enter your username" value="<?= esc(old('username')) ?>" autocomplete="username" required>
+            <?php if ($needsInitialStaff): ?>
+                <p class="employee-empty">The first staff account is created once. After that, staff accounts can only be added from the dashboard.</p>
+                <?= view('employee/staff_account_form', [
+                    'formAction' => base_url('admin/staff/create'),
+                    'submitLabel' => 'Create first staff account',
+                    'departments' => $departments,
+                ]) ?>
+            <?php else: ?>
+                <form method="post" action="<?= base_url('admin/login') ?>">
+                    <label class="auth-label" for="staff-username">Username</label>
+                    <input id="staff-username" type="text" name="username" placeholder="Enter the Username from the admin table" value="<?= esc(old('username')) ?>" autocomplete="username" required>
 
-                <label class="auth-label" for="staff-department">Department</label>
-                <select id="staff-department" name="department" required>
-                    <option value="">Choose your department</option>
-                    <?php foreach ($departments as $department): ?>
-                        <option value="<?= esc($department) ?>" <?= old('department') === $department ? 'selected' : '' ?>><?= esc($department) ?></option>
-                    <?php endforeach; ?>
-                </select>
+                    <label class="auth-label" for="admin-password">Password</label>
+                    <input id="admin-password" type="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
 
-                <label class="auth-label" for="admin-password">Password</label>
-                <input id="admin-password" type="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
-
-                <button type="submit">Sign in to staff portal</button>
-            </form>
+                    <button type="submit">Sign in to staff portal</button>
+                </form>
+            <?php endif; ?>
             <p class="auth-switch"><a href="<?= base_url('/') ?>">Back to home</a></p>
         </div>
     </div>
