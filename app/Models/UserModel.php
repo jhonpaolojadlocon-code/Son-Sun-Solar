@@ -19,6 +19,5 @@ class UserModel extends Model
         'gender',
         'phone_number',
         'address',
-        'department',
     ];
 }

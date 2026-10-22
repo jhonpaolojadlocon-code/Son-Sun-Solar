@@ -42,11 +42,6 @@ class AddEmployeeDetailsToRegistration extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'department' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 60,
-                'null'       => true,
-            ],
         ];
 
         $existingFields = array_map('strtolower', $this->db->getFieldNames('registration'));
@@ -68,7 +63,6 @@ class AddEmployeeDetailsToRegistration extends Migration
             'gender',
             'phone_number',
             'address',
-            'department',
         ];
 
         $existingFields = array_map('strtolower', $this->db->getFieldNames('registration'));

@@ -8,21 +8,11 @@ class AddConfirmPasswordToRegistration extends Migration
 {
     public function up(): void
     {
-        if (! $this->db->fieldExists('confirmpassword', 'registration')) {
-            $this->forge->addColumn('registration', [
-                'confirmpassword' => [
-                    'type'       => 'VARCHAR',
-                    'constraint' => 255,
-                    'null'       => true,
-                ],
-            ]);
-        }
+        // Password confirmation is validated during registration and is not stored.
     }
 
     public function down(): void
     {
-        if ($this->db->fieldExists('confirmpassword', 'registration')) {
-            $this->forge->dropColumn('registration', 'confirmpassword');
-        }
+        // No schema changes are made by this migration.
     }
 }

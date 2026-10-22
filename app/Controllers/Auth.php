@@ -6,8 +6,6 @@ use App\Models\UserModel;
 
 class Auth extends BaseController
 {
-    private const DEPARTMENTS = ['Administration', 'IT', 'Dispatch', 'Accounting', 'HR', 'Marketing', 'Sales', 'Customer Service'];
-
     public function login()
     {
         return view('auth/login');
@@ -47,65 +45,10 @@ class Auth extends BaseController
                 'display_name' => $user['first_name'] ?? $user['email']
             ]);
 
-            return redirect()->to(base_url())->with('success', 'Welcome back, ' . ($user['first_name'] ?? $user['email']) . '.');
+            return redirect()->to('/')->with('success', 'Welcome back, ' . ($user['first_name'] ?? $user['email']) . '.');
         }
 
         return redirect()->back()->withInput()->with('error', 'Invalid login details.');
-    }
-
-    public function adminLogin()
-    {
-        if (session()->get('is_admin')) {
-            return redirect()->to(base_url('admin/departments'));
-        }
-
-        return view('auth/admin_login');
-    }
-
-    public function adminLoginProcess()
-    {
-        $email = trim((string) $this->request->getPost('email'));
-        $password = (string) $this->request->getPost('password');
-        $department = trim((string) $this->request->getPost('department'));
-        $adminEmail = trim((string) env('ADMIN_EMAIL', ''));
-        $passwordHash = (string) env('ADMIN_PASSWORD_HASH', '');
-
-        if (! in_array($department, self::DEPARTMENTS, true)) {
-            return redirect()->back()->withInput()->with('error', 'Choose a valid department.');
-        }
-
-        if ($adminEmail === '' || $passwordHash === '') {
-            return redirect()->back()->withInput()->with('error', 'Admin login is not configured. Set ADMIN_EMAIL and ADMIN_PASSWORD_HASH in the server environment.');
-        }
-
-        if ($email !== '' && $password !== '' && hash_equals($adminEmail, $email) && password_verify($password, $passwordHash)) {
-            session()->regenerate(true);
-            session()->set([
-                'is_admin' => true,
-                'admin_email' => $adminEmail,
-                'admin_department' => $department,
-            ]);
-
-            return redirect()->to(base_url('admin/departments'));
-        }
-
-        return redirect()->back()->withInput()->with('error', 'Invalid admin email or password.');
-    }
-
-    public function adminDepartments()
-    {
-        if (! session()->get('is_admin')) {
-            return redirect()->to(base_url('admin/login'))->with('error', 'Sign in as an administrator to view departments.');
-        }
-
-        return view('admin/departments', ['departments' => self::DEPARTMENTS]);
-    }
-
-    public function adminLogout()
-    {
-        session()->remove(['is_admin', 'admin_email', 'admin_department']);
-
-        return redirect()->to(base_url('admin/login'));
     }
 
     public function registerProcess()
@@ -124,6 +67,11 @@ class Auth extends BaseController
 
         if ($email === '' || $firstName === '' || $lastName === '' || $middleName === '' || $birthday === '' || $gender === '' || $phoneNumber === '' || $address === '' || $password === '' || $confirmPassword === '') {
             return redirect()->back()->withInput()->with('error', 'Complete all fields before signing up.');
+        }
+
+        $departments = ['Administration', 'IT Dispatch', 'Accounting', 'HR', 'Marketing', 'Sales', 'Customer service'];
+        if ($department !== '' && ! in_array($department, $departments, true)) {
+            return redirect()->back()->withInput()->with('error', 'Choose a valid department.');
         }
 
         if (! in_array($gender, ['Female', 'Male', 'Non-binary', 'Prefer not to say'], true)) {
@@ -165,7 +113,7 @@ class Auth extends BaseController
             'gender' => $gender,
             'phone_number' => $phoneNumber,
             'address' => $address,
-            'department' => null,
+            'department' => $department !== '' ? $department : null,
         ]);
 
         $newUser = $model->where('email', $email)->first();
@@ -176,15 +124,15 @@ class Auth extends BaseController
                 'display_name' => $newUser['first_name']
             ]);
 
-            return redirect()->to(base_url());
+            return redirect()->to('/');
         }
 
-        return redirect()->to(base_url('login'))->with('success', 'Account created. Please sign in.');
+        return redirect()->to('/login')->with('success', 'Account created. Please sign in.');
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('login'));
+        return redirect()->to('/login');
     }
 }
